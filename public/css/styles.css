@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   margin: 0;
   background: rgb(26, 26, 26);
@@ -7,107 +8,152 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .content {
   width: 100%;
   max-width: 1200px;
-  padding: 70px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 100%;
+  gap: 2rem;
   box-sizing: border-box;
+  flex-grow: 1;
 }
 
-.time, .metronome, .measure {
+.time, .metronome, .measure, .stopwatch {
   width: 100%;
   text-align: center;
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
-  margin-top: 20px;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
+/* Updated circle */
 .circle {
-  width: 20vw;
+  width: 10vw;
   max-width: 120px;
-  height: 20vw;
+  height: 10vw;
   max-height: 120px;
   border-radius: 50%;
   background-color: rgb(26, 26, 26);
   border: 2px solid #333;
 }
 
+/* Typography */
 p {
-  font-size: 4vw;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin: 0.5rem 0;
 }
 
 h1 {
-  font-size: 6vw;
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 0.5rem 0;
 }
 
+/* Menu toggle button */
 .menu-toggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1rem;
+  right: 1rem;
   background: #444;
   border: none;
-  padding: 12px 18px;
+  padding: 0.75rem 1.2rem;
   color: white;
   cursor: pointer;
   z-index: 10;
   font-size: 1.2rem;
+  border-radius: 8px;
 }
 
+/* Menu panel */
 .menu-panel {
   position: absolute;
   top: 70px;
-  right: 20px;
+  right: 1rem;
   background: #333;
   border-radius: 12px;
-  padding: 25px 30px;
+  padding: 1.5rem 2rem;
   display: none;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.2rem;
   z-index: 9;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+  width: 300px;
+  max-width: 90vw;
 }
 
 .menu-panel label {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 1.6rem;
+  gap: 1rem;
+  font-size: 1.4rem;
 }
 
 input[type="checkbox"] {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
+/* Responsive styles */
 @media (max-width: 600px) {
+  .content {
+    padding: 1rem;
+  }
+
+  .container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
   .circle {
-    width: 60px;
-    height: 60px;
+    width: 18vw;
+    height: 18vw;
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .menu-toggle {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .menu-panel {
+    width: 70vw;
+    padding: 1rem 1.2rem;
+    right: 5vw;
   }
 
   .menu-panel label {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }
