@@ -10,7 +10,8 @@
 
   <button class="menu-toggle" onclick="toggleMenu()">⚙️</button>
   <div class="menu-panel" id="menuPanel">
-    <label><input type="checkbox" checked onchange="toggleSection('time')"/> Time</label>
+    <label><input type="checkbox" checked onchange="toggleSection('time')"/> Time (OSC)</label>
+    <label><input type="checkbox" checked onchange="toggleSection('stopwatch')"/> Time (server)</label>
     <label><input type="checkbox" checked onchange="toggleSection('metronome')"/> Metronome</label>
     <label><input type="checkbox" checked onchange="toggleSection('measure')"/> Measure</label>
     <label><input type="checkbox" id="audioToggle" onchange="toggleAudio()"/> Audio</label>
@@ -20,6 +21,11 @@
     <div class="time" id="timeSection">
       <p>Time:</p>
       <h1 id="time" style="font-size: 10vh">0:00</h1>
+    </div>
+
+    <div class="stopwatch" id="stopwatchSection">
+      <p>Stopwatch:</p>
+      <h1 id="stopwatch" style="font-size: 10vh">0:00</h1>
     </div>
 
     <div class="metronome" id="metronomeSection">

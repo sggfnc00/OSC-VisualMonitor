@@ -23,7 +23,7 @@ body {
   box-sizing: border-box;
 }
 
-.time, .metronome, .measure {
+.time, .metronome, .measure, .stopwatch {
   width: 100%;
   text-align: center;
   flex: 1;

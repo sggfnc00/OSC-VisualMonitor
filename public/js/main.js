@@ -1,6 +1,7 @@
 const socket = io();
 
 const time = document.getElementById('time');
+const stopwatch = document.getElementById('stopwatch');
 const measure = document.getElementById('measure');
 const circle1 = document.getElementById('circle1');
 const circle2 = document.getElementById('circle2');
@@ -36,4 +37,11 @@ socket.on('beat', (msg) => {
 socket.on('time', (msg) => {
   const timeStr = msg.split(".");
   time.textContent = timeStr[0];
+});
+
+socket.on('stopwatch', function(msg){
+  const array = msg.split(":");
+  array.pop();  
+  let string= array.join(':');   
+  stopwatch.innerHTML = string;
 });
