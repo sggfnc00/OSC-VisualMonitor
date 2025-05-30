@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Metronome App</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">⚙️</button>
+  <div class="menu-panel" id="menuPanel">
+    <label><input type="checkbox" checked onchange="toggleSection('time')"/> Time</label>
+    <label><input type="checkbox" checked onchange="toggleSection('metronome')"/> Metronome</label>
+    <label><input type="checkbox" checked onchange="toggleSection('measure')"/> Measure</label>
+    <label><input type="checkbox" id="audioToggle" onchange="toggleAudio()"/> Audio</label>
+  </div>
+
+  <div class="content">
+    <div class="time" id="timeSection">
+      <p>Time:</p>
+      <h1 id="time" style="font-size: 10vh">0:00</h1>
+    </div>
+
+    <div class="metronome" id="metronomeSection">
+      <p>Metronome:</p>
+      <div class="container">
+        <div id="circle1" class="circle"></div>
+        <div id="circle2" class="circle"></div>
+      </div>
+    </div>
+
+    <div class="measure" id="measureSection">
+      <p>Measures:</p>
+      <h1 id="measure" style="font-size: 10vh;">0</h1>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
