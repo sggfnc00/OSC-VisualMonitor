@@ -38,7 +38,7 @@ You must install the following Node.js modules:
 
 ---
 
-## 🚀 Running the Server
+## Running the Server
 
 To start the server, run:
 
