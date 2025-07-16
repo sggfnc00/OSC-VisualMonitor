@@ -62,7 +62,7 @@ p {
 }
 
 h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: 70vh;
   margin: 0.5rem 0;
 }
 
@@ -150,7 +150,7 @@ input[type="checkbox"] {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 50rem;
   }
 
   p {
