@@ -8,17 +8,15 @@ function toggleSection(sectionId) {
   section.style.display = section.style.display === 'none' ? 'flex' : 'none';
 }
 
-let fontSize = 70; // vh per h1
-let circleSize = 10; // vw per .circle
+let fontSize = parseFloat(getComputedStyle(document.querySelector('h1')).fontSize) / window.innerHeight * 100; // vh
+let circleSize = parseFloat(getComputedStyle(document.querySelector('.circle')).width) / window.innerWidth * 100; // vw
 
 function changeSize(delta) {
-  // Aggiorna font-size degli h1 (senza limite massimo)
   fontSize = Math.max(4, fontSize + delta);
   document.querySelectorAll('h1').forEach(h1 => {
     h1.style.fontSize = fontSize + 'vh';
   });
 
-  // Aggiorna dimensione dei cerchi (senza limite massimo)
   circleSize = Math.max(4, circleSize + delta);
   document.querySelectorAll('.circle').forEach(c => {
     c.style.width = circleSize + 'vw';

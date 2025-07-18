@@ -150,7 +150,8 @@ input[type="checkbox"] {
   }
 
   h1 {
-    font-size: 50rem;
+    font-size: 20vh;
+    margin: 0.5rem 0;
   }
 
   p {
